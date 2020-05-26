@@ -44,11 +44,13 @@
             this.textBoxSideA = new System.Windows.Forms.TextBox();
             this.textBoxSideB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxSideC = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxResult = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCalc = new System.Windows.Forms.Button();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelNumber = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,6 +129,7 @@
             this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "clonk";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label5
             // 
@@ -162,6 +165,7 @@
             this.textBoxSideA.Name = "textBoxSideA";
             this.textBoxSideA.Size = new System.Drawing.Size(100, 20);
             this.textBoxSideA.TabIndex = 12;
+            this.textBoxSideA.TextChanged += new System.EventHandler(this.textBoxSideA_TextChanged);
             // 
             // textBoxSideB
             // 
@@ -169,6 +173,7 @@
             this.textBoxSideB.Name = "textBoxSideB";
             this.textBoxSideB.Size = new System.Drawing.Size(100, 20);
             this.textBoxSideB.TabIndex = 14;
+            this.textBoxSideB.TextChanged += new System.EventHandler(this.textBoxSideB_TextChanged);
             // 
             // label7
             // 
@@ -179,57 +184,80 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "bok B";
             // 
-            // textBoxSideC
+            // textBoxResult
             // 
-            this.textBoxSideC.Location = new System.Drawing.Point(376, 344);
-            this.textBoxSideC.Name = "textBoxSideC";
-            this.textBoxSideC.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSideC.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(373, 327);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "bok C";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(543, 299);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 18;
+            this.textBoxResult.Location = new System.Drawing.Point(543, 299);
+            this.textBoxResult.Name = "textBoxResult";
+            this.textBoxResult.Size = new System.Drawing.Size(100, 20);
+            this.textBoxResult.TabIndex = 18;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(540, 282);
+            this.label9.Location = new System.Drawing.Point(518, 282);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.Size = new System.Drawing.Size(125, 13);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Wynik:";
+            this.label9.Text = "Wynik (długość boku C):";
             // 
             // btnCalc
             // 
-            this.btnCalc.Location = new System.Drawing.Point(388, 383);
+            this.btnCalc.Location = new System.Drawing.Point(376, 335);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(75, 23);
             this.btnCalc.TabIndex = 19;
             this.btnCalc.Text = "oblicz";
             this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(45, 318);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(31, 13);
+            this.labelName.TabIndex = 20;
+            this.labelName.Text = "imię: ";
+            // 
+            // labelNumber
+            // 
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.Location = new System.Drawing.Point(45, 340);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(39, 13);
+            this.labelNumber.TabIndex = 21;
+            this.labelNumber.Text = "numer:";
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(44, 363);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(37, 13);
+            this.labelEmail.TabIndex = 22;
+            this.labelEmail.Text = "e-mail:";
+            // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Location = new System.Drawing.Point(44, 385);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(83, 13);
+            this.labelDate.TabIndex = 23;
+            this.labelDate.Text = "data urodzenia: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 474);
+            this.Controls.Add(this.labelDate);
+            this.Controls.Add(this.labelEmail);
+            this.Controls.Add(this.labelNumber);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.btnCalc);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxSideC);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxSideB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxSideA);
@@ -246,7 +274,7 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Testowanie Aplikacji ";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -271,11 +299,13 @@
         private System.Windows.Forms.TextBox textBoxSideA;
         private System.Windows.Forms.TextBox textBoxSideB;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxSideC;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxResult;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnCalc;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelNumber;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelDate;
     }
 }
 
