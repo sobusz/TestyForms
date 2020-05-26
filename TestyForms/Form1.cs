@@ -44,9 +44,21 @@ namespace TestyForms
             if (sideA != null && sideB != null)
             {
                 double result;
+                double finalResult;
+                double circResult;
+                double areaResult;
+
                 result = Math.Pow(sideA, 2) + Math.Pow(sideB, 2);
-                
-                textBoxResult.Text = Math.Round(Math.Sqrt(result), 4).ToString();
+                finalResult = Math.Round(Math.Sqrt(result), 4);
+
+
+                textBoxResult.Text = finalResult.ToString();
+
+                circResult = sideA + sideB + finalResult;
+                textBoxCirc.Text = circResult.ToString();
+
+                areaResult = (sideA * sideB) / 2;
+                textBoxArea.Text = areaResult.ToString();
             }
 
         }
@@ -78,6 +90,31 @@ namespace TestyForms
             labelNumber.Text = "numer : " + number;
             labelEmail.Text = "e-mail: " + email;
             labelDate.Text = "data urodzenia: " + date;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxResult_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

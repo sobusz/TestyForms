@@ -51,6 +51,10 @@
             this.labelNumber = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
+            this.textBoxCirc = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxArea = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,23 +190,25 @@
             // 
             // textBoxResult
             // 
-            this.textBoxResult.Location = new System.Drawing.Point(543, 299);
+            this.textBoxResult.Location = new System.Drawing.Point(528, 253);
             this.textBoxResult.Name = "textBoxResult";
             this.textBoxResult.Size = new System.Drawing.Size(100, 20);
             this.textBoxResult.TabIndex = 18;
+            this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(518, 282);
+            this.label9.Location = new System.Drawing.Point(525, 237);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 13);
+            this.label9.Size = new System.Drawing.Size(88, 13);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Wynik (długość boku C):";
+            this.label9.Text = "Długość boku C:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // btnCalc
             // 
-            this.btnCalc.Location = new System.Drawing.Point(376, 335);
+            this.btnCalc.Location = new System.Drawing.Point(376, 396);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(75, 23);
             this.btnCalc.TabIndex = 19;
@@ -246,11 +252,50 @@
             this.labelDate.TabIndex = 23;
             this.labelDate.Text = "data urodzenia: ";
             // 
+            // textBoxCirc
+            // 
+            this.textBoxCirc.Location = new System.Drawing.Point(528, 315);
+            this.textBoxCirc.Name = "textBoxCirc";
+            this.textBoxCirc.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCirc.TabIndex = 25;
+            this.textBoxCirc.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(525, 299);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Obwód: ";
+            // 
+            // textBoxArea
+            // 
+            this.textBoxArea.Location = new System.Drawing.Point(528, 356);
+            this.textBoxArea.Name = "textBoxArea";
+            this.textBoxArea.Size = new System.Drawing.Size(100, 20);
+            this.textBoxArea.TabIndex = 27;
+            this.textBoxArea.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(525, 340);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Pole: ";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 474);
+            this.Controls.Add(this.textBoxArea);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBoxCirc);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelNumber);
@@ -306,6 +351,10 @@
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.TextBox textBoxCirc;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxArea;
+        private System.Windows.Forms.Label label10;
     }
 }
 
