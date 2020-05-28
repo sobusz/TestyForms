@@ -44,21 +44,20 @@ namespace TestyForms
             if (sideA != null && sideB != null)
             {
                 double result;
-                double finalResult;
-                double circResult;
+                double finalResult;               double circResult;
                 double areaResult;
 
                 result = Math.Pow(sideA, 2) + Math.Pow(sideB, 2);
                 finalResult = Math.Round(Math.Sqrt(result), 4);
 
 
-                textBoxResult.Text = finalResult.ToString();
+                labelSideC.Text = finalResult.ToString();
 
                 circResult = sideA + sideB + finalResult;
-                textBoxCirc.Text = circResult.ToString();
+                labelCirc.Text = circResult.ToString();
 
                 areaResult = (sideA * sideB) / 2;
-                textBoxArea.Text = areaResult.ToString();
+                labelArea.Text = areaResult.ToString();
             }
 
         }

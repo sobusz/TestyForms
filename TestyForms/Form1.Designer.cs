@@ -44,17 +44,17 @@
             this.textBoxSideA = new System.Windows.Forms.TextBox();
             this.textBoxSideB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxResult = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCalc = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
-            this.textBoxCirc = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxArea = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.labelSideC = new System.Windows.Forms.Label();
+            this.labelCirc = new System.Windows.Forms.Label();
+            this.labelArea = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,14 +188,6 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "bok B";
             // 
-            // textBoxResult
-            // 
-            this.textBoxResult.Location = new System.Drawing.Point(528, 253);
-            this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(100, 20);
-            this.textBoxResult.TabIndex = 18;
-            this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -252,14 +244,6 @@
             this.labelDate.TabIndex = 23;
             this.labelDate.Text = "data urodzenia: ";
             // 
-            // textBoxCirc
-            // 
-            this.textBoxCirc.Location = new System.Drawing.Point(528, 315);
-            this.textBoxCirc.Name = "textBoxCirc";
-            this.textBoxCirc.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCirc.TabIndex = 25;
-            this.textBoxCirc.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -268,14 +252,6 @@
             this.label8.Size = new System.Drawing.Size(47, 13);
             this.label8.TabIndex = 24;
             this.label8.Text = "Obwód: ";
-            // 
-            // textBoxArea
-            // 
-            this.textBoxArea.Location = new System.Drawing.Point(528, 356);
-            this.textBoxArea.Name = "textBoxArea";
-            this.textBoxArea.Size = new System.Drawing.Size(100, 20);
-            this.textBoxArea.TabIndex = 27;
-            this.textBoxArea.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label10
             // 
@@ -287,21 +263,45 @@
             this.label10.Text = "Pole: ";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
+            // labelSideC
+            // 
+            this.labelSideC.AutoSize = true;
+            this.labelSideC.Location = new System.Drawing.Point(534, 254);
+            this.labelSideC.Name = "labelSideC";
+            this.labelSideC.Size = new System.Drawing.Size(0, 13);
+            this.labelSideC.TabIndex = 27;
+            // 
+            // labelCirc
+            // 
+            this.labelCirc.AutoSize = true;
+            this.labelCirc.Location = new System.Drawing.Point(534, 318);
+            this.labelCirc.Name = "labelCirc";
+            this.labelCirc.Size = new System.Drawing.Size(0, 13);
+            this.labelCirc.TabIndex = 28;
+            // 
+            // labelArea
+            // 
+            this.labelArea.AutoSize = true;
+            this.labelArea.Location = new System.Drawing.Point(534, 362);
+            this.labelArea.Name = "labelArea";
+            this.labelArea.Size = new System.Drawing.Size(0, 13);
+            this.labelArea.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 474);
-            this.Controls.Add(this.textBoxArea);
+            this.Controls.Add(this.labelArea);
+            this.Controls.Add(this.labelCirc);
+            this.Controls.Add(this.labelSideC);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBoxCirc);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelNumber);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.btnCalc);
-            this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxSideB);
             this.Controls.Add(this.label7);
@@ -344,17 +344,17 @@
         private System.Windows.Forms.TextBox textBoxSideA;
         private System.Windows.Forms.TextBox textBoxSideB;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxResult;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelDate;
-        private System.Windows.Forms.TextBox textBoxCirc;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxArea;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelSideC;
+        private System.Windows.Forms.Label labelCirc;
+        private System.Windows.Forms.Label labelArea;
     }
 }
 
