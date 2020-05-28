@@ -1,6 +1,7 @@
 using MathModules;
 using NUnit.Framework;
 using System;
+using HtmlAgilityPack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -114,6 +115,10 @@ namespace TestyForms.Tests
             Assert.That(ex.Message == "Bok B nie mo¿e byæ równy zero przy polu");
         }
 
+
+
+        //______________________________TESTY SELENIUM ____________________________________________
+
         [TestFixture()]
         public class SeleniumTests
         {
@@ -127,7 +132,7 @@ namespace TestyForms.Tests
                 URL = "https://www.google.pl";
             }
             [OneTimeTearDown]
-            public void tearDownTests()
+            public void TearDownTests()
             {
                 driver.Close();
             }
@@ -152,9 +157,65 @@ namespace TestyForms.Tests
                 String temperature = driver.FindElement(By.XPath("//span[starts-with(@id, 'wob_tm')]")).Text;
 
                 Assert.GreaterOrEqual(temperature, "15");
-                
             }
 
+            [Test]
+            public void IsChanceOfRainHigherThan20Percent()
+            {
+                driver.Navigate().GoToUrl(URL);
+                driver.Manage().Window.Maximize();
+
+                IWebElement searchElement = driver.FindElement(By.Name("q"));
+                searchElement.SendKeys("pogoda");
+                searchElement.Submit();
+                String rain = driver.FindElement(By.XPath("//span[starts-with(@id, 'wob_pp')]")).Text.Trim('%');
+
+                Assert.GreaterOrEqual(rain, "20");
+            }
+
+            [Test]
+            public void IsFHot16Challenge2StillTrendingOnYoutube()
+            {
+                driver.Navigate().GoToUrl("https://www.youtube.com/feed/trending");
+                driver.Manage().Window.Maximize();
+
+     
+                var foundHot16 = false;
+                var titles = driver.FindElements(By.XPath("//*[@id='video-title']/yt-formatted-string"));
+
+                foreach (var title in titles)
+                {
+                    if (title.Text.Contains("#hot16challenge2"))
+                    {
+                        foundHot16 = true;
+                    }
+                }
+
+                Assert.IsTrue(foundHot16);
+            }
+
+            [Test]
+            public void IsFHot16Challenge2StillTrendingOnYoutube_AndMoreThan10()
+            {
+                driver.Navigate().GoToUrl("https://www.youtube.com/feed/trending");
+                driver.Manage().Window.Maximize();
+
+
+                var foundHot16 = false;
+                int counter = 0;
+                var titles = driver.FindElements(By.XPath("//*[@id='video-title']/yt-formatted-string"));
+
+                foreach (var title in titles)
+                {
+                    if (title.Text.Contains("#hot16challenge2"))
+                    {
+                        foundHot16 = true;
+                        counter++;
+                    }
+                }
+
+                Assert.Greater(counter, 10);
+            }
         }
     }
 }
