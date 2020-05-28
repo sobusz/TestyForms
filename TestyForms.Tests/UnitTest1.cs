@@ -4,6 +4,7 @@ using System;
 using HtmlAgilityPack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace TestyForms.Tests
 {
@@ -130,11 +131,12 @@ namespace TestyForms.Tests
             {
                 driver = new ChromeDriver();
                 URL = "https://www.google.pl";
+                driver.Manage().Window.Maximize();
             }
             [OneTimeTearDown]
             public void TearDownTests()
             {
-                driver.Close();
+                //driver.Close();
             }
 
             [Test]
@@ -149,7 +151,6 @@ namespace TestyForms.Tests
             public void IsTemperatureAbove15DegreesCelsius()
             {
                 driver.Navigate().GoToUrl(URL);
-                driver.Manage().Window.Maximize();
 
                 IWebElement searchElement = driver.FindElement(By.Name("q"));
                 searchElement.SendKeys("pogoda");
@@ -163,7 +164,6 @@ namespace TestyForms.Tests
             public void IsChanceOfRainHigherThan20Percent()
             {
                 driver.Navigate().GoToUrl(URL);
-                driver.Manage().Window.Maximize();
 
                 IWebElement searchElement = driver.FindElement(By.Name("q"));
                 searchElement.SendKeys("pogoda");
@@ -198,8 +198,6 @@ namespace TestyForms.Tests
             public void IsFHot16Challenge2StillTrendingOnYoutube_AndMoreThan10()
             {
                 driver.Navigate().GoToUrl("https://www.youtube.com/feed/trending");
-                driver.Manage().Window.Maximize();
-
 
                 var foundHot16 = false;
                 int counter = 0;
@@ -213,8 +211,23 @@ namespace TestyForms.Tests
                         counter++;
                     }
                 }
-
                 Assert.Greater(counter, 10);
+            }
+
+            [Test]
+            public void MSTeamsWZR()
+            {
+                driver.Navigate().GoToUrl("https://wzr.ug.edu.pl/glowna/");
+                driver.FindElement(By.XPath("//*[@id='belka_menu']/ul/li[3]/a")).Click();
+                driver.FindElement(By.XPath("//*[@id='strona_right']/div[3]/div[3]/div/a")).Click();
+                driver.FindElement(By.XPath("//*[@id='strona_right']/div[3]/div/a")).Click();
+                driver.FindElement(By.XPath("//*[@id='strona_right']/div[9]/div[3]/div/a")).Click();
+                var education = driver.FindElement(By.XPath("//*[@id='strona_right']/form/select"));
+                var selectElement = new SelectElement(education);
+
+                selectElement.SelectByText("S22-32");
+
+
             }
         }
     }
