@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathModules;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,21 +44,18 @@ namespace TestyForms
         {
             if (sideA != null && sideB != null)
             {
-                double result;
-                double finalResult;               double circResult;
-                double areaResult;
 
-                result = Math.Pow(sideA, 2) + Math.Pow(sideB, 2);
-                finalResult = Math.Round(Math.Sqrt(result), 4);
+                var calc = new CalculatePithagoras();
 
+                double sideC = calc.calcSideC(sideA, sideB);
+                labelSideC.Text = sideC.ToString();
 
-                labelSideC.Text = finalResult.ToString();
+                double calcCirc = calc.calcCirc(sideA, sideB);
+                labelCirc.Text = calcCirc.ToString();
 
-                circResult = sideA + sideB + finalResult;
-                labelCirc.Text = circResult.ToString();
+                double calcArea = calc.calcArea(sideA, sideB);
+                labelArea.Text = calcArea.ToString();
 
-                areaResult = (sideA * sideB) / 2;
-                labelArea.Text = areaResult.ToString();
             }
 
         }

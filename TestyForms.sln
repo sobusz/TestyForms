@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestyForms", "TestyForms\TestyForms.csproj", "{DFD8F197-CD48-4264-8C87-487FC89998CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestyForms.Tests", "TestyForms.Tests\TestyForms.Tests.csproj", "{7B8056CF-107B-4B2A-AD0D-357FADC990CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathModules", "MathModules\MathModules.csproj", "{83DA1806-5117-4551-9985-62EB26893BC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DFD8F197-CD48-4264-8C87-487FC89998CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFD8F197-CD48-4264-8C87-487FC89998CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFD8F197-CD48-4264-8C87-487FC89998CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B8056CF-107B-4B2A-AD0D-357FADC990CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B8056CF-107B-4B2A-AD0D-357FADC990CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B8056CF-107B-4B2A-AD0D-357FADC990CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B8056CF-107B-4B2A-AD0D-357FADC990CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DA1806-5117-4551-9985-62EB26893BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DA1806-5117-4551-9985-62EB26893BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DA1806-5117-4551-9985-62EB26893BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DA1806-5117-4551-9985-62EB26893BC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
